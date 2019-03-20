@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, from } from "rxjs";
-import { delay, tap, map } from "rxjs/operators";
+import { Observable } from "rxjs";
+import { delay, map } from "rxjs/operators";
 
 interface Usertoken {
   username: string, 
@@ -44,7 +43,7 @@ export class AuthService {
   private usertoken: Usertoken;
   private lastLoginErrorMessage: string;
 
-  constructor(private http: HttpClient) { 
+  constructor() { 
     this.usertoken = {
       username: '',
       token: ''
